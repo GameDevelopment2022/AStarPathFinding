@@ -4,7 +4,7 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
     public LayerMask obstacleMask;
-
+    public bool drawPathGizmos = true;
     public Vector2 gridSize;
     public float nodeRadius;
 
@@ -12,6 +12,11 @@ public class Grid : MonoBehaviour
 
     private float nodeDiameter;
     private int gridSizeX, gridSizeY;
+
+    public int MaxSize
+    {
+        get { return gridSizeX * gridSizeY; }
+    }
 
     private void Start()
     {
@@ -58,7 +63,7 @@ public class Grid : MonoBehaviour
 
         return grid[x, y];
     }*/
-    
+
     public Node NodeFromWorldPoint(Vector3 worldPoint)
     {
         Vector3 worldBottomPoint =
@@ -116,14 +121,27 @@ public class Grid : MonoBehaviour
         if (grid == null)
             return;
 
-        foreach (Node node in grid)
-        {
-            Gizmos.color = node.isBlocked ? Color.red : Color.white;
-            if (path != null)
-                if (path.Contains(node))
-                    Gizmos.color = Color.black;
 
-            Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
+        if (drawPathGizmos)
+        {
+            if (path != null)
+                foreach (Node node in path)
+                {
+                    Gizmos.color = Color.black;
+                    Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
+                }
+        }
+        else
+        {
+            foreach (Node node in grid)
+            {
+                Gizmos.color = node.isBlocked ? Color.red : Color.white;
+                if (path != null)
+                    if (path.Contains(node))
+                        Gizmos.color = Color.black;
+
+                Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
+            }
         }
     }
 }

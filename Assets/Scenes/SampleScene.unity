@@ -712,7 +712,7 @@ Transform:
   m_GameObject: {fileID: 502169452}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 8.5, y: 1, z: -88.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -766,7 +766,8 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 64
-  gridSize: {x: 20, y: 20}
+  drawPathGizmos: 1
+  gridSize: {x: 200, y: 200}
   nodeRadius: 0.5
 --- !u!114 &615874500
 MonoBehaviour:
@@ -1161,7 +1162,7 @@ Transform:
   m_GameObject: {fileID: 1217641203}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.25, y: 1, z: -6.1}
+  m_LocalPosition: {x: 54.6, y: 1, z: 59.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1193,7 +1194,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 986358787}
@@ -1201,7 +1202,7 @@ Transform:
   - {fileID: 941635000}
   - {fileID: 26671305}
   - {fileID: 2029186344}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1804262982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1804262978
 GameObject:
@@ -1310,9 +1311,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 20, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1599036563}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2029186343
@@ -1433,7 +1435,6 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
-  - {fileID: 1599036563}
   - {fileID: 1804262982}
   - {fileID: 615874498}
   - {fileID: 1217641207}

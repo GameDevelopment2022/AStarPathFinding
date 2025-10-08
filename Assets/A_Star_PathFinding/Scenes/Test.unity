@@ -729,6 +729,7 @@ GameObject:
   - component: {fileID: 615874498}
   - component: {fileID: 615874499}
   - component: {fileID: 615874500}
+  - component: {fileID: 615874501}
   m_Layer: 0
   m_Name: A*
   m_TagString: Untagged
@@ -766,7 +767,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 64
-  drawPathGizmos: 1
+  drawGridGizmos: 0
   gridSize: {x: 200, y: 200}
   nodeRadius: 0.5
 --- !u!114 &615874500
@@ -781,9 +782,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955fcb2375ac7fc4fa5062ca366a8e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathFinding
-  seeker: {fileID: 1217641207}
-  target: {fileID: 502169456}
+  pathManager: {fileID: 615874501}
   grid: {fileID: 615874499}
+--- !u!114 &615874501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615874497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2018fd83c3c49b42b6d57fcb9be259f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PathManager
+  _pathFinding: {fileID: 615874500}
+  isProcessingPath: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1081,7 @@ GameObject:
   - component: {fileID: 1217641206}
   - component: {fileID: 1217641205}
   - component: {fileID: 1217641204}
+  - component: {fileID: 1217641208}
   m_Layer: 0
   m_Name: Seeker
   m_TagString: Untagged
@@ -1168,6 +1183,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1217641208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217641203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b50ef86d8954548b2dde7183b4fa31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Unit
+  target: {fileID: 502169456}
+  speed: 5
+  targetIndex: 0
 --- !u!1 &1599036562
 GameObject:
   m_ObjectHideFlags: 0
